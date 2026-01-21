@@ -5,90 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FRAJ 666 | DNS SCRIPT</title>
     <style>
-        body {
-            background-color: #0b0b0e;
-            color: white;
-            font-family: 'Segoe UI', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px 0;
-        }
-        .container {
-            background: #121217;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #ff3232;
-            text-align: center;
-            width: 90%;
-            max-width: 450px;
-            box-shadow: 0 0 30px rgba(255, 50, 50, 0.2);
-        }
+        body { background-color: #0b0b0e; color: white; font-family: 'Segoe UI', sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px 0; }
+        .container { background: #121217; padding: 25px; border-radius: 12px; border: 1px solid #ff3232; text-align: center; width: 90%; max-width: 450px; box-shadow: 0 0 30px rgba(255, 50, 50, 0.2); }
         h1 { color: #ff3232; font-size: 28px; margin-bottom: 5px; letter-spacing: 2px; text-transform: uppercase; }
         .desc { color: #888; font-size: 13px; margin-bottom: 20px; font-weight: bold; }
-        
         .section-label { color: #ff3232; font-size: 12px; font-weight: bold; text-align: left; margin-bottom: 5px; text-transform: uppercase; }
-
-        .code-box {
-            background: #000;
-            padding: 12px;
-            border-radius: 6px;
-            font-family: monospace;
-            font-size: 12px;
-            color: #ffffff;
-            word-break: break-all;
-            margin-bottom: 10px;
-            border: 1px solid #333;
-            text-align: left;
-        }
-
-        .main-btn {
-            background-color: #ff3232;
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            font-size: 16px;
-            margin-bottom: 25px;
-            transition: 0.3s;
-        }
-
-        .key-row {
-            display: flex;
-            align-items: center;
-            background: #000;
-            margin-bottom: 6px;
-            border-radius: 4px;
-            border: 1px solid #222;
-            overflow: hidden;
-        }
-        .key-text {
-            flex: 1;
-            padding: 8px 10px;
-            font-family: monospace;
-            font-size: 10px;
-            color: #ffffff;
-            text-align: left;
-            overflow: hidden;
-        }
-        .copy-key-btn {
-            background: #ff3232;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 10px;
-        }
+        .code-box { background: #000; padding: 12px; border-radius: 6px; font-family: monospace; font-size: 12px; color: #ffffff; word-break: break-all; margin-bottom: 10px; border: 1px solid #333; text-align: left; }
+        .main-btn { background-color: #ff3232; color: white; border: none; padding: 15px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 16px; margin-bottom: 25px; transition: 0.3s; }
+        .key-row { display: flex; align-items: center; background: #000; margin-bottom: 6px; border-radius: 4px; border: 1px solid #222; overflow: hidden; }
+        .key-text { flex: 1; padding: 8px 10px; font-family: monospace; font-size: 10px; color: #ffffff; text-align: left; overflow: hidden; }
+        .copy-key-btn { background: #ff3232; color: white; border: none; padding: 8px 12px; cursor: pointer; font-weight: bold; font-size: 10px; }
     </style>
 </head>
 <body>
-
 <div class="container">
     <h1>FRAJ 666</h1>
     <p class="desc">DIESEL N' STEEL OFFICIAL SCRIPT</p>
@@ -98,7 +27,6 @@
     <button class="main-btn" onclick="copyText('scriptBox', this)">COPY LOADSTRING</button>
 
     <div class="section-label">Free Keys (10 Total)</div>
-    
     <div class="key-row"><div class="key-text" id="k1">d1485897-3363-4816-99ac-3c027336a89d</div><button class="copy-key-btn" onclick="copyText('k1', this)">COPY</button></div>
     <div class="key-row"><div class="key-text" id="k2">1b8ecdcd-ea31-458a-b86d-7e3f7d039f17</div><button class="copy-key-btn" onclick="copyText('k2', this)">COPY</button></div>
     <div class="key-row"><div class="key-text" id="k3">9739c118-b2ce-4975-87e7-c629949067ee</div><button class="copy-key-btn" onclick="copyText('k3', this)">COPY</button></div>
@@ -118,12 +46,8 @@
         const originalText = btn.innerText;
         btn.innerText = "DONE!";
         btn.style.backgroundColor = "#4CAF50";
-        setTimeout(() => {
-            btn.innerText = originalText;
-            btn.style.backgroundColor = "#ff3232";
-        }, 1500);
+        setTimeout(() => { btn.innerText = originalText; btn.style.backgroundColor = "#ff3232"; }, 1500);
     }
 </script>
-
 </body>
 </html>

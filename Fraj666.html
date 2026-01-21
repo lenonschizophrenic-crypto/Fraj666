@@ -12,48 +12,84 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            padding: 20px 0;
         }
         .container {
             background: #121217;
-            padding: 30px;
-            border-radius: 10px;
+            padding: 25px;
+            border-radius: 12px;
             border: 1px solid #ff3232;
             text-align: center;
-            width: 85%;
+            width: 90%;
             max-width: 450px;
-            box-shadow: 0 0 20px rgba(255, 50, 50, 0.2);
+            box-shadow: 0 0 30px rgba(255, 50, 50, 0.15);
         }
         h1 { color: #ff3232; font-size: 28px; margin-bottom: 5px; letter-spacing: 2px; }
-        .desc { color: #888; font-size: 14px; margin-bottom: 25px; }
+        .desc { color: #888; font-size: 13px; margin-bottom: 20px; font-weight: bold; }
         
+        .section-label { color: #ff3232; font-size: 12px; font-weight: bold; text-align: left; margin-bottom: 5px; text-transform: uppercase; }
+
         .code-box {
             background: #000;
-            padding: 15px;
-            border-radius: 5px;
-            font-family: 'Courier New', monospace;
+            padding: 12px;
+            border-radius: 6px;
+            font-family: monospace;
             font-size: 12px;
-            color: #00ff00;
+            color: #ffffff;
             word-break: break-all;
-            margin-bottom: 25px;
-            border: 1px solid #222;
+            margin-bottom: 15px;
+            border: 1px solid #333;
             text-align: left;
         }
 
-        .copy-btn {
+        .key-row {
+            display: flex;
+            align-items: center;
+            background: #000;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            border: 1px solid #222;
+            overflow: hidden;
+        }
+        .key-text {
+            flex: 1;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 11px;
+            color: #ffffff;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .copy-key-btn {
+            background: #ff3232;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 11px;
+            transition: 0.2s;
+        }
+        .copy-key-btn:active { background: #4CAF50; }
+
+        .main-btn {
             background-color: #ff3232;
             color: white;
             border: none;
             padding: 15px;
-            border-radius: 5px;
+            border-radius: 6px;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
             font-size: 16px;
+            margin-top: 10px;
             transition: 0.3s;
         }
-        .copy-btn:hover { background-color: #cc2828; }
+        .main-btn:hover { background-color: #cc2828; }
     </style>
 </head>
 <body>
@@ -62,26 +98,53 @@
     <h1>FRAJ 666</h1>
     <p class="desc">DIESEL N' STEEL OFFICIAL SCRIPT</p>
 
-    <div class="code-box" id="scriptBox">
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/lenonschizophrenic-crypto/Fraj/main/demonyo.lua"))()
+    <div class="section-label">Script Loadstring</div>
+    <div class="code-box" id="scriptBox">loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/cbc8eb8b413c35da1977baeb34129cb9124e9c34e881d7d60d20450d29f3e61b/download"))()</div>
+    <button class="main-btn" onclick="copyText('scriptBox', 'btnText')" id="btnText">COPY LOADSTRING</button>
+
+    <div style="margin-top: 25px;" class="section-label">Free Keys</div>
+    
+    <div class="key-row">
+        <div class="key-text" id="key1">d1485897-3363-4816-99ac-3c027336a89d</div>
+        <button class="copy-key-btn" onclick="copyText('key1')">COPY</button>
     </div>
 
-    <button class="copy-btn" onclick="copyText()" id="btnText">COPY LOADSTRING</button>
+    <div class="key-row">
+        <div class="key-text" id="key2">1b8ecdcd-ea31-458a-b86d-7e3f7d039f17</div>
+        <button class="copy-key-btn" onclick="copyText('key2')">COPY</button>
+    </div>
+
+    <div class="key-row">
+        <div class="key-text" id="key3">9739c118-b2ce-4975-87e7-c629949067ee</div>
+        <button class="copy-key-btn" onclick="copyText('key3')">COPY</button>
+    </div>
+    
+    <div class="key-row">
+        <div class="key-text" id="key4">e3afede1-82b0-4321-a39e-e1e64d6ae200</div>
+        <button class="copy-key-btn" onclick="copyText('key4')">COPY</button>
+    </div>
+
+    <div class="key-row">
+        <div class="key-text" id="key5">e6616eab-e314-404c-bff2-2a75da813b30</div>
+        <button class="copy-key-btn" onclick="copyText('key5')">COPY</button>
+    </div>
 </div>
 
 <script>
-    function copyText() {
-        const text = document.getElementById('scriptBox').innerText;
+    function copyText(elementId, btnId) {
+        const text = document.getElementById(elementId).innerText;
         navigator.clipboard.writeText(text);
         
-        const btn = document.getElementById('btnText');
-        btn.innerText = "COPIED!";
-        btn.style.backgroundColor = "#4CAF50";
-        
-        setTimeout(() => {
-            btn.innerText = "COPY LOADSTRING";
-            btn.style.backgroundColor = "#ff3232";
-        }, 2000);
+        if (btnId) {
+            const btn = document.getElementById(btnId);
+            const oldText = btn.innerText;
+            btn.innerText = "COPIED!";
+            btn.style.backgroundColor = "#4CAF50";
+            setTimeout(() => {
+                btn.innerText = oldText;
+                btn.style.backgroundColor = "#ff3232";
+            }, 2000);
+        }
     }
 </script>
 

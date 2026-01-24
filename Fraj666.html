@@ -6,12 +6,10 @@
     <title>FRAJ 666 | DNS SCRIPT</title>
     <style>
         body { 
-            /* REPEATING PATTERN SETTINGS */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('star.jpg'); 
-            background-size: 150px; /* Adjust this number to make the stars smaller or bigger */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('star.jpg'); 
+            background-size: 180px;
             background-repeat: repeat;
             background-color: #0b0b0e; 
-            
             color: white; 
             font-family: 'Segoe UI', sans-serif; 
             display: flex; 
@@ -19,102 +17,108 @@
             justify-content: center; 
             min-height: 100vh; 
             margin: 0; 
-            padding: 40px 0; 
+            padding: 10px; 
         }
 
-        .container { 
-            background: rgba(18, 18, 23, 0.95); 
-            padding: 25px; 
-            border-radius: 12px; 
-            border: 2px solid #ff3232; 
-            text-align: center; 
-            width: 92%; 
-            max-width: 500px; 
-            box-shadow: 0 0 40px rgba(255, 50, 50, 0.4); 
-            backdrop-filter: blur(10px);
-            position: relative;
-            z-index: 1;
+        .main-wrapper {
+            display: flex;
+            gap: 20px;
+            max-width: 1200px;
+            width: 98%;
+            flex-wrap: wrap; 
+            justify-content: center;
         }
 
-        h1 { color: #ff3232; font-size: 32px; margin-bottom: 5px; letter-spacing: 2px; text-transform: uppercase; font-weight: 900; }
-        .desc { color: #888; font-size: 14px; margin-bottom: 20px; font-weight: bold; }
-        .section-label { color: #ff3232; font-size: 14px; font-weight: 900; text-align: left; margin-bottom: 8px; text-transform: uppercase; }
+        /* BOTH PANELS NOW HAVE THE RED GLOWING BORDER */
+        .left-panel, .right-panel {
+            background: rgba(18, 18, 23, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid #ff3232; /* MATCHED RED BORDER */
+            box-shadow: 0 0 40px rgba(255, 50, 50, 0.4); /* MATCHED GLOW */
+            display: flex;
+            flex-direction: column;
+            min-width: 400px;
+            flex: 1;
+        }
+
+        .left-panel { flex: 1.2; text-align: center; }
+
+        h1 { color: #ff3232; font-size: 48px; margin-bottom: 5px; letter-spacing: 3px; text-transform: uppercase; font-weight: 900; margin-top: 0; }
+        .desc { color: #888; font-size: 18px; margin-bottom: 25px; font-weight: bold; letter-spacing: 1px; }
+        .section-label { color: #ff3232; font-size: 18px; font-weight: 900; text-align: left; margin-bottom: 12px; text-transform: uppercase; }
         
         .ps-box {
             background: rgba(10, 10, 15, 0.8);
-            border: 2px solid #3299ff;
-            padding: 15px;
-            border-radius: 8px;
+            border: 3px solid #3299ff;
+            padding: 20px;
+            border-radius: 10px;
             margin-bottom: 25px;
-            box-shadow: 0 0 15px rgba(50, 153, 255, 0.2);
         }
-        .ps-text { color: #3299ff; font-size: 13px; font-weight: 900; margin-bottom: 10px; text-transform: uppercase; }
-        .ps-btn { background-color: #3299ff; color: white; text-decoration: none; display: block; padding: 12px; border-radius: 6px; font-weight: 900; font-size: 14px; transition: 0.3s; }
-        .ps-btn:hover { background-color: #0077ff; transform: scale(1.02); }
+        .ps-text { color: #3299ff; font-size: 14px; font-weight: 900; margin-bottom: 12px; text-transform: uppercase; }
+        .ps-btn { background-color: #3299ff; color: white; text-decoration: none; display: block; padding: 15px; border-radius: 8px; font-weight: 900; font-size: 18px; transition: 0.3s; margin-bottom: 10px; }
+        .ps-btn:hover { background-color: #0077ff; transform: scale(1.03); }
+        
+        .copy-link-btn { background-color: transparent; border: 2px solid #3299ff; color: #3299ff; padding: 10px; border-radius: 8px; font-weight: 900; font-size: 14px; cursor: pointer; width: 100%; text-transform: uppercase; transition: 0.3s; }
 
         .code-box { 
             background: #000; 
-            padding: 18px; 
-            border-radius: 8px; 
+            padding: 20px; 
+            border-radius: 10px; 
             font-family: 'Courier New', monospace; 
             font-size: 18px; 
             font-weight: bold;
             color: #ffffff; 
             word-break: break-all; 
-            margin-bottom: 12px; 
-            border: 1px solid #444; 
+            margin-bottom: 15px; 
+            border: 2px solid #333; 
             text-align: left; 
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
-        .main-btn { background-color: #ff3232; color: white; border: none; padding: 18px; border-radius: 8px; font-weight: 900; cursor: pointer; width: 100%; font-size: 18px; margin-bottom: 30px; transition: 0.3s; text-transform: uppercase; }
-        .main-btn:active { background-color: #4CAF50; transform: scale(0.98); }
+        .main-btn { background-color: #ff3232; color: white; border: none; padding: 20px; border-radius: 10px; font-weight: 900; cursor: pointer; width: 100%; font-size: 20px; text-transform: uppercase; transition: 0.2s; }
 
-        .key-row { display: flex; align-items: center; background: #000; margin-bottom: 8px; border-radius: 6px; border: 1px solid #333; overflow: hidden; }
-        .key-text { 
-            flex: 1; 
-            padding: 12px 15px; 
-            font-family: monospace; 
-            font-size: 16px; 
-            font-weight: bold;
-            color: #ffffff; 
-            text-align: left; 
-            overflow: hidden; 
-        }
-        .copy-key-btn { background: #ff3232; color: white; border: none; padding: 12px 20px; cursor: pointer; font-weight: 900; font-size: 14px; text-transform: uppercase; }
-        .copy-key-btn:active { background: #4CAF50; }
+        .key-row { display: flex; align-items: center; background: #000; margin-bottom: 10px; border-radius: 8px; border: 1px solid #444; overflow: hidden; }
+        .key-text { flex: 1; padding: 15px 18px; font-family: monospace; font-size: 15px; color: #fff; text-align: left; font-weight: bold; }
+        .copy-key-btn { background: #ff3232; color: white; border: none; padding: 15px 25px; cursor: pointer; font-weight: 900; font-size: 14px; text-transform: uppercase; }
 
-        .footer { margin-top: 25px; color: #ffffff; font-size: 13px; font-weight: bold; padding: 10px; border-top: 1px dashed #444; line-height: 1.5; }
+        .footer { margin-top: auto; color: #bbb; font-size: 13px; font-weight: bold; border-top: 2px dashed #333; padding-top: 15px; line-height: 1.4; }
     </style>
 </head>
 <body>
-<div class="container">
-    <h1>FRAJ 666</h1>
-    <p class="desc">DIESEL N' STEEL SCRIPT</p>
 
-    <div class="ps-box">
-        <div class="ps-text">YOU DONT HAVE PRIVATE SERVER TO TEST SCRIPT? USE MINE :)</div>
-        <a href="https://www.roblox.com/share?code=e892eb2df05a4d40995554812364d8b1&type=Server" target="_blank" class="ps-btn">JOIN PRIVATE SERVER</a>
+<div class="main-wrapper">
+    <div class="left-panel">
+        <h1>FRAJ 666</h1>
+        <p class="desc">DIESEL N' STEEL SCRIPT</p>
+
+        <div class="ps-box">
+            <div class="ps-text">YOU DONT HAVE PRIVATE SERVER TO TEST SCRIPT? USE MINE :)</div>
+            <a href="https://www.roblox.com/share?code=e892eb2df05a4d40995554812364d8b1&type=Server" target="_blank" class="ps-btn">JOIN PRIVATE SERVER</a>
+            <button class="copy-link-btn" onclick="copyRawText('https://www.roblox.com/share?code=e892eb2df05a4d40995554812364d8b1&type=Server', this)">COPY SERVER LINK</button>
+        </div>
+
+        <div class="section-label">Script Loadstring</div>
+        <div class="code-box" id="scriptBox">loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/cbc8eb8b413c35da1977baeb34129cb9124e9c34e881d7d60d20450d29f3e61b/download"))()</div>
+        <button class="main-btn" onclick="copyText('scriptBox', this)">COPY LOADSTRING</button>
     </div>
 
-    <div class="section-label">Script Loadstring</div>
-    <div class="code-box" id="scriptBox">loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/cbc8eb8b413c35da1977baeb34129cb9124e9c34e881d7d60d20450d29f3e61b/download"))()</div>
-    <button class="main-btn" onclick="copyText('scriptBox', this)">COPY LOADSTRING</button>
+    <div class="right-panel">
+        <div class="section-label">Free Keys (10 TOTAL)</div>
+        <div class="key-row"><div class="key-text" id="k1">0554bf9c-764d-4abe-8c23-9a4840a9fe40</div><button class="copy-key-btn" onclick="copyText('k1', this)">COPY</button></div>
+        <div class="key-row"><div class="key-text" id="k2">fb3c9f80-b6ac-4e5d-a617-1cae7cfbba10</div><button class="copy-key-btn" onclick="copyText('k2', this)">COPY</button></div>
+        <div class="key-row"><div class="key-text" id="k3">405ae465-1516-4df9-a3b0-f2e716dffbbf</div><button class="copy-key-btn" onclick="copyText('k3', this)">COPY</button></div>
+        <div class="key-row"><div class="key-text" id="k4">b88bf273-7b34-43ef-a913-c3ddd26e0884</div><button class="copy-key-btn" onclick="copyText('k4', this)">COPY</button></div>
+        <div class="key-row"><div class="key-text" id="k5">22d221a2-9007-487c-970c-e9409fffddd4</div><button class="copy-key-btn" onclick="copyText('k5', this)">COPY</button></div>
+        <div class="key-row"><div class="key-text" id="k6">b43dae92-9523-4503-b64b-bb03d25a3c63</div><button class="copy-key-btn" onclick="copyText('k6', this)">COPY</button></div>
+        <div class="key-row"><div class="key-text" id="k7">cb74260b-60ea-4249-a69c-8555df003a3f</div><button class="copy-key-btn" onclick="copyText('k7', this)">COPY</button></div>
+        <div class="key-row"><div class="key-text" id="k8">62936df0-dd07-4cfe-b47f-67d60e30b850</div><button class="copy-key-btn" onclick="copyText('k8', this)">COPY</button></div>
+        <div class="key-row"><div class="key-text" id="k9">e9fdbfc9-70c6-4093-bb70-57940005e30f</div><button class="copy-key-btn" onclick="copyText('k9', this)">COPY</button></div>
+        <div class="key-row"><div class="key-text" id="k10">a8b303e5-94ff-4e57-a894-f50f44db325e</div><button class="copy-key-btn" onclick="copyText('k10', this)">COPY</button></div>
 
-    <div class="section-label">Free Keys (10 TOTAL)</div>
-    <div class="key-row"><div class="key-text" id="k1">0554bf9c-764d-4abe-8c23-9a4840a9fe40</div><button class="copy-key-btn" onclick="copyText('k1', this)">COPY</button></div>
-    <div class="key-row"><div class="key-text" id="k2">fb3c9f80-b6ac-4e5d-a617-1cae7cfbba10</div><button class="copy-key-btn" onclick="copyText('k2', this)">COPY</button></div>
-    <div class="key-row"><div class="key-text" id="k3">405ae465-1516-4df9-a3b0-f2e716dffbbf</div><button class="copy-key-btn" onclick="copyText('k3', this)">COPY</button></div>
-    <div class="key-row"><div class="key-text" id="k4">b88bf273-7b34-43ef-a913-c3ddd26e0884</div><button class="copy-key-btn" onclick="copyText('k4', this)">COPY</button></div>
-    <div class="key-row"><div class="key-text" id="k5">22d221a2-9007-487c-970c-e9409fffddd4</div><button class="copy-key-btn" onclick="copyText('k5', this)">COPY</button></div>
-    <div class="key-row"><div class="key-text" id="k6">b43dae92-9523-4503-b64b-bb03d25a3c63</div><button class="copy-key-btn" onclick="copyText('k6', this)">COPY</button></div>
-    <div class="key-row"><div class="key-text" id="k7">cb74260b-60ea-4249-a69c-8555df003a3f</div><button class="copy-key-btn" onclick="copyText('k7', this)">COPY</button></div>
-    <div class="key-row"><div class="key-text" id="k8">62936df0-dd07-4cfe-b47f-67d60e30b850</div><button class="copy-key-btn" onclick="copyText('k8', this)">COPY</button></div>
-    <div class="key-row"><div class="key-text" id="k9">e9fdbfc9-70c6-4093-bb70-57940005e30f</div><button class="copy-key-btn" onclick="copyText('k9', this)">COPY</button></div>
-    <div class="key-row"><div class="key-text" id="k10">a8b303e5-94ff-4e57-a894-f50f44db325e</div><button class="copy-key-btn" onclick="copyText('k10', this)">COPY</button></div>
-
-    <div class="footer">
-        IF NONE OF THESE KEYS ARE WORKING, THEY HAVE ALREADY BEEN USED.
+        <div class="footer">
+            IF NONE OF THESE KEYS ARE WORKING, THEY HAVE ALREADY BEEN USED.
+        </div>
     </div>
 </div>
 
@@ -126,6 +130,19 @@
         btn.innerText = "COPIED!";
         btn.style.backgroundColor = "#4CAF50";
         setTimeout(() => { btn.innerText = originalText; btn.style.backgroundColor = "#ff3232"; }, 1500);
+    }
+
+    function copyRawText(val, btn) {
+        navigator.clipboard.writeText(val);
+        const originalText = btn.innerText;
+        btn.innerText = "LINK COPIED!";
+        btn.style.borderColor = "#4CAF50";
+        btn.style.color = "#4CAF50";
+        setTimeout(() => { 
+            btn.innerText = originalText; 
+            btn.style.borderColor = "#3299ff"; 
+            btn.style.color = "#3299ff";
+        }, 1500);
     }
 </script>
 </body>

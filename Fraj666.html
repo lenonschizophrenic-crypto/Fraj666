@@ -6,7 +6,8 @@
     <title>FRAJ 666 | DNS SCRIPT</title>
     <style>
         body { 
-            background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('star.jpg'); 
+            /* YOUR DIRECT IMAGE LINK APPLIED HERE */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://i.ibb.co/6RRMZY0L/star.jpg'); 
             background-size: 180px;
             background-repeat: repeat;
             background-color: #0b0b0e; 
@@ -29,17 +30,17 @@
             justify-content: center;
         }
 
-        /* BOTH PANELS NOW HAVE THE RED GLOWING BORDER */
         .left-panel, .right-panel {
             background: rgba(18, 18, 23, 0.95);
             padding: 40px;
             border-radius: 15px;
-            border: 3px solid #ff3232; /* MATCHED RED BORDER */
-            box-shadow: 0 0 40px rgba(255, 50, 50, 0.4); /* MATCHED GLOW */
+            border: 3px solid #ff3232; 
+            box-shadow: 0 0 40px rgba(255, 50, 50, 0.4); 
             display: flex;
             flex-direction: column;
             min-width: 400px;
             flex: 1;
+            backdrop-filter: blur(10px);
         }
 
         .left-panel { flex: 1.2; text-align: center; }
@@ -83,6 +84,11 @@
         .copy-key-btn { background: #ff3232; color: white; border: none; padding: 15px 25px; cursor: pointer; font-weight: 900; font-size: 14px; text-transform: uppercase; }
 
         .footer { margin-top: auto; color: #bbb; font-size: 13px; font-weight: bold; border-top: 2px dashed #333; padding-top: 15px; line-height: 1.4; }
+        
+        @media (max-width: 850px) {
+            .main-wrapper { flex-direction: column; align-items: center; }
+            .left-panel, .right-panel { width: 100%; min-width: 0; padding: 20px; }
+        }
     </style>
 </head>
 <body>
